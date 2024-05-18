@@ -1,0 +1,22 @@
+import pandas as pd
+
+data = {'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Emma'],
+        'Marks': [85, 90, 75, 88, 92],
+        'CGPA': [8.5, 9.0, 7.5, 8.8, 9.2],
+        'Percentage': [85, 90, 75, 88, 92]}
+
+df = pd.DataFrame(data)
+print(df)
+
+# No preprocessing needed for this example
+
+from sklearn.linear_model import LinearRegression
+
+X = df[['Marks', 'CGPA']]
+y = df['Percentage']
+
+model = LinearRegression()
+model.fit(X, y)
+
+predictions = model.predict(X)
+print(predictions)
